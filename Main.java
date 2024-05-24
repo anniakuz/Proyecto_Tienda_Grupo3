@@ -22,7 +22,7 @@ public class Main {
             switch (opcion) {
                 case 1:
                     System.out.println("Contenido de compras.csv:");
-                    CompraData.leerTodasCompras().stream().forEach(compra -> System.out.println(compra.toString()));
+                    compras.stream().forEach(compra -> System.out.println(compra.toString()));
                     System.out.println("-----------------------------------------");
                     break;
                 case 2:
@@ -30,9 +30,9 @@ public class Main {
                     String nombre = scanner.nextLine();
                     scanner.close();
                     List<Compra> compraPorNombre = new ArrayList<>();
-                    for(int i = 0; i < CompraData.leerTodasCompras().size();i++){
-                        if(CompraData.leerTodasCompras().get(i).getNombreClinete().toLowerCase().equals(nombre.toLowerCase())){
-                            compraPorNombre.add(CompraData.leerTodasCompras().get(i));
+                    for(int i = 0; i < compras.size();i++){
+                        if(compras.get(i).getNombreClinete().toLowerCase().equals(nombre.toLowerCase())){
+                            compraPorNombre.add(compras.get(i));
                         }
                     }
                     if(compraPorNombre.isEmpty()){
@@ -43,7 +43,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Lista de productos.csv:");
-                    ProductoData.leerTodosProductos().stream().forEach(producto -> System.out.println(producto.toString()));
+                    productos.stream().forEach(producto -> System.out.println(producto.toString()));
                     System.out.println("-----------------------------------------");
                     break;
                 case 4:
@@ -52,9 +52,9 @@ public class Main {
                     scanner.close();
                     boolean encontrado = false;
                     for(int i = 0; i < ProductoData.leerTodosProductos().size();i++){
-                        if(ProductoData.leerTodosProductos().get(i).getNombre().toLowerCase().equals(nombreProducto.toLowerCase())){
+                        if(productos.get(i).getNombre().toLowerCase().equals(nombreProducto.toLowerCase())){
                             encontrado = true;
-                            System.out.println(ProductoData.leerTodosProductos().get(i).toString());
+                            System.out.println(productos.get(i).toString());
                         }
                     }
                     if(encontrado == false){
@@ -65,15 +65,12 @@ public class Main {
                 case 5:
                     System.out.println("Ganancias totales: " );
                     double totalidad = 0.0;
-                    for(int i = 0; i < CompraData.leerTodasCompras().size();i++){
-                        String productoNombre = CompraData.leerTodasCompras().get(i).getNombreProducto();
-                        for(int j = 0; j < ProductoData.leerTodosProductos().size();j++){
-                            if(ProductoData.leerTodosProductos().get(j).getNombre().equals(productoNombre)){
+                    for(int i = 0; i < compras.size();i++){
+                        String productoNombre = compras.get(i).getNombreProducto();
+                        for(int j = 0; j < productos.size();j++){
+                            if(productos.get(j).getNombre().equals(productoNombre)){
 
-                                System.out.println(CompraData.leerTodasCompras().get(i).getCantidad());
-                                System.out.println(ProductoData.leerTodosProductos().get(j).getPrecio());
-                                System.out.println(ProductoData.leerTodosProductos().get(j).getNombre());
-                                totalidad += CompraData.leerTodasCompras().get(i).getCantidad() * ProductoData.leerTodosProductos().get(j).getPrecio();
+                                totalidad += compras.get(i).getCantidad() * productos.get(j).getPrecio();
                             }
                         }
                     }
