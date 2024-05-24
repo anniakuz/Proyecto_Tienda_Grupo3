@@ -50,7 +50,6 @@ public class Main {
                 case 4:
                     System.out.print("Ingresa el nombre del producto a buscar ");
                     String nombreProducto = scanner.nextLine();
-                    scanner.close();
                     boolean encontrado = false;
                     for(int i = 0; i < ProductoData.leerTodosProductos().size();i++){
                         if(productos.get(i).getNombre().toLowerCase().equals(nombreProducto.toLowerCase())){

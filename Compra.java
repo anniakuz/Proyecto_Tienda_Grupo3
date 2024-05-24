@@ -5,11 +5,7 @@ public class Compra {
 
     @Override
     public String toString() {
-        return "Compra{" +
-                "nombreClinete='" + nombreClinete + '\'' +
-                ", nombreProducto='" + nombreProducto + '\'' +
-                ", cantidad=" + cantidad +
-                '}';
+        return nombreClinete + "   " + nombreProducto + " " + cantidad;
     }
 
     public String getNombreClinete() {
