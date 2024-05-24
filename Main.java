@@ -12,8 +12,8 @@ public class Main {
             System.out.println("2. Buscar por el nombre en compras.csv");
             System.out.println("3. Ver todo el contenido de productos.csv");
             System.out.println("4. Buscar por el nombre en productos.csv");
-            System.out.println("5.Ganancias totales");
-            System.out.println("6.Ganancias totales por producto");
+            System.out.println("5. Ganancias totales");
+            System.out.println("6. Ganancias totales por producto");
             System.out.println("7. Salir");
 
             int opcion = scanner.nextInt();
@@ -26,7 +26,7 @@ public class Main {
                     System.out.println("-----------------------------------------");
                     break;
                 case 2:
-                    System.out.print("Ingresa el ID a buscar en compras.csv: ");
+                    System.out.print("Ingresa el nombre a buscar en compras.csv: ");
                     String nombreCl = scanner.nextLine();
 
                     List<Compra> compraPorNombre = new ArrayList<>();
@@ -35,12 +35,14 @@ public class Main {
                             compraPorNombre.add(compras.get(i));
                         }
                     }
-                    if(compraPorNombre.isEmpty()){
+                    if(!compraPorNombre.isEmpty()){
+                        System.out.println("Cliente " + nombreCl + " tiene estas compras:");
+                        compraPorNombre.stream().forEach(compra -> System.out.println(compra.getNombreProducto() +"   " + compra.getCantidad()));
+                        System.out.println("-----------------------------------------");
+                    }else{
                         System.out.println("No hay cliente con este nombre");
+                        
                     }
-                    System.out.println("Cliente " + nombreCl + " tiene estas compras:");
-                    compraPorNombre.stream().forEach(compra -> System.out.println(compra.getNombreProducto() +"   " + compra.getCantidad()));
-                    System.out.println("-----------------------------------------");
                     break;
                 case 3:
                     System.out.println("Lista de productos.csv:");
