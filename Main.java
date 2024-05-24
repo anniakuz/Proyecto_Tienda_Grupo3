@@ -27,19 +27,20 @@ public class Main {
                     break;
                 case 2:
                     System.out.print("Ingresa el ID a buscar en compras.csv: ");
-                    String nombre = scanner.nextLine();
-                    scanner.close();
+                    String nombreCl = scanner.nextLine();
+
                     List<Compra> compraPorNombre = new ArrayList<>();
                     for(int i = 0; i < compras.size();i++){
-                        if(compras.get(i).getNombreClinete().toLowerCase().equals(nombre.toLowerCase())){
+                        if(compras.get(i).getNombreClinete().toLowerCase().equals(nombreCl.toLowerCase())){
                             compraPorNombre.add(compras.get(i));
                         }
                     }
                     if(compraPorNombre.isEmpty()){
                         System.out.println("No hay cliente con este nombre");
                     }
-                    System.out.println(compraPorNombre+"\n"+"-----------------------------------------");
-
+                    System.out.println("Cliente " + nombreCl + " tiene estas compras:");
+                    compraPorNombre.stream().forEach(compra -> System.out.println(compra.getNombreProducto() +"   " + compra.getCantidad()));
+                    System.out.println("-----------------------------------------");
                     break;
                 case 3:
                     System.out.println("Lista de productos.csv:");
