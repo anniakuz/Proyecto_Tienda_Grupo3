@@ -24,8 +24,17 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Contenido de compras.csv:");
-                    compras.stream().forEach(compra -> System.out.println(compra.toString()));
+                    System.out.println("Contenido de compras.csv:" + "\n");
+                    int cantidad = 0;
+
+                    for (Producto producto : productos) {
+                        for (Compra compra : compras) {
+                            if (producto.getNombre().equals(compra.getNombreProducto())) {
+                                cantidad += compra.getCantidad();
+                            }
+                        }
+                        System.out.println(producto.getNombre() + " " + cantidad);
+                    }
                     System.out.println("-----------------------------------------");
                     break;
                 case 2:
@@ -40,7 +49,8 @@ public class Main {
                     }
                     if (!compraPorNombre.isEmpty()) {
                         System.out.println("Cliente " + nombreCl + " tiene estas compras:");
-                        compraPorNombre.stream().forEach(compra -> System.out.println(compra.getNombreProducto() + "   " + compra.getCantidad()));
+                        compraPorNombre.stream().forEach(compra -> System.out
+                                .println(compra.getNombreProducto() + "   " + compra.getCantidad()));
                         System.out.println("-----------------------------------------");
                     } else {
                         System.out.println("No hay cliente con este nombre");
@@ -115,11 +125,11 @@ public class Main {
                         System.out.print("Precio del producto: ");
                         if (scanner.hasNextDouble()) {
                             nuevoPrecio = scanner.nextDouble();
-                            scanner.nextLine();  // clear the buffer
+                            scanner.nextLine(); // clear the buffer
                             precioValido = true;
                         } else {
                             System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
-                            scanner.next();  // clear the invalid input
+                            scanner.next(); // clear the invalid input
                         }
                     }
 
@@ -170,11 +180,12 @@ public class Main {
                             System.out.print("Nuevo precio del producto: ");
                             if (scanner.hasNextDouble()) {
                                 nuevoPrecioActualizar = scanner.nextDouble();
-                                scanner.nextLine();  // clear the buffer
+                                scanner.nextLine(); // clear the buffer
                                 precioActualizarValido = true;
                             } else {
-                                System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
-                                scanner.next();  // clear the invalid input
+                                System.out.println(
+                                        "Entrada inválida. Por favor, ingresa un número válido para el precio.");
+                                scanner.next(); // clear the invalid input
                             }
                         }
 
