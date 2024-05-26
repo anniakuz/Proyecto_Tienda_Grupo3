@@ -13,12 +13,15 @@ public class Main {
             System.out.println("3. Ver todo el contenido de productos.csv");
             System.out.println("4. Buscar por el nombre en productos.csv");
             System.out.println("5. Ganancias totales");
-            System.out.println("6. Ganancias totales por producto");
-            System.out.println("7. Agregar un producto");
-            System.out.println("8. Agregar una compra");
-            System.out.println("9. Eliminar un producto");
-            System.out.println("10. Actualizar el precio de un producto");
-            System.out.println("11. Salir");
+            System.out.println("6. Ganancias totales de un producto");
+            System.out.println("7. Ganancias totales de cada producto");
+            System.out.println("8. Agregar un producto");
+            System.out.println("9. Agregar una compra");
+            System.out.println("10. Eliminar un producto");
+            System.out.println("11. Actualizar el precio de un producto");
+            System.out.println("12. Cliente más activo por numero de compras");
+            System.out.println("13. Cliente más activo por valor de compras");
+            System.out.println("14. Salir");
 
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -115,6 +118,10 @@ public class Main {
                     }
                     break;
                 case 7:
+
+                    break;
+
+                case 8:
                     System.out.println("Agregar un nuevo producto:");
                     System.out.print("Nombre del producto: ");
                     String nuevoNombre = scanner.nextLine();
@@ -140,7 +147,7 @@ public class Main {
                     System.out.println("Producto agregado exitosamente.");
                     System.out.println("-----------------------------------------");
                     break;
-                case 8:
+                case 9:
                     System.out.println("Nombre del cliente: ");
                     String nombreCliente = scanner.nextLine();
                     System.out.println("Nombre producto: ");
@@ -169,7 +176,7 @@ public class Main {
 
                     break;
 
-                case 9:
+                case 10:
                     System.out.println("Eliminar un producto:");
                     System.out.print("Nombre del producto a eliminar: ");
                     String nombreEliminar = scanner.nextLine();
@@ -190,7 +197,7 @@ public class Main {
                     }
                     System.out.println("-----------------------------------------");
                     break;
-                case 10:
+                case 11:
                     System.out.println("Actualizar el precio de un producto:");
                     System.out.print("Nombre del producto a actualizar: ");
                     String nombreActualizar = scanner.nextLine();
@@ -228,7 +235,14 @@ public class Main {
                     System.out.println("-----------------------------------------");
                     break;
 
-                case 11:
+                case 12: 
+                    System.out.println("Cliente más activo por numero de compras");
+
+                case 13:
+                    System.out.println("cliente + activo x valor de compra");
+                    
+                    break;
+                case 14:
                     System.out.println("Saliendo...");
                     scanner.close();
                     return;
