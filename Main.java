@@ -28,15 +28,19 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Contenido de compras.csv:" + "\n");
-                    int cantidad = 0;
+                    System.out.println("Contenido de compras" + "\n");
+                    
+                    
 
                     for (Producto producto : productos) {
+                        int cantidad = 0;
                         for (Compra compra : compras) {
                             if (producto.getNombre().equals(compra.getNombreProducto())) {
                                 cantidad += compra.getCantidad();
                             }
+
                         }
+
                         System.out.println(producto.getNombre() + " " + cantidad);
                     }
                     System.out.println("-----------------------------------------");
@@ -235,8 +239,10 @@ public class Main {
                     System.out.println("-----------------------------------------");
                     break;
 
-                case 12: 
-                    System.out.println("Cliente más activo por numero de compras");
+                case 12:
+                    // Cliente más activo por numero de compras
+                    boolean findCliente = false;
+                    boolean findProduct = false;
 
                 case 13:
                     System.out.println("cliente +  activo x valor de compra");
