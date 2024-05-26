@@ -239,8 +239,8 @@ public class Main {
                     System.out.println("Cliente más activo por numero de compras");
 
                 case 13:
-                    System.out.println("cliente + activo x valor de compra");
-                    
+                    System.out.println("cliente +  activo x valor de compra");
+
                     break;
                 case 14:
                     System.out.println("Saliendo...");
