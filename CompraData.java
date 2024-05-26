@@ -1,10 +1,14 @@
 import javax.swing.*;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CompraData {
     private static final String FILE_PATH = "archivos/compras.csv";
@@ -39,5 +43,14 @@ public class CompraData {
 
         return compras;
 
+    }
+    
+    public static void guardarCompra(Compra compra) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
+            writer.write(compra.getNombreClinete() + "," + compra.getNombreProducto() + "," +  compra.getCantidad());
+            writer.newLine();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al guardar la compra: " + e.getMessage());
+        }
     }
 }

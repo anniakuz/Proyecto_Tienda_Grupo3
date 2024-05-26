@@ -15,9 +15,10 @@ public class Main {
             System.out.println("5. Ganancias totales");
             System.out.println("6. Ganancias totales por producto");
             System.out.println("7. Agregar un producto");
-            System.out.println("8. Eliminar un producto");
-            System.out.println("9. Actualizar el precio de un producto");
-            System.out.println("10. Salir");
+            System.out.println("8. Agregar una compra");
+            System.out.println("9. Eliminar un producto");
+            System.out.println("10. Actualizar el precio de un producto");
+            System.out.println("11. Salir");
 
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -140,6 +141,35 @@ public class Main {
                     System.out.println("-----------------------------------------");
                     break;
                 case 8:
+                    System.out.println("Nombre del cliente: ");
+                    String nombreCliente = scanner.nextLine();
+                    System.out.println("Nombre producto: ");
+                    String nameProducto = scanner.nextLine();
+                    boolean findProducto = false;
+
+                    for (Producto producto : productos) {
+                        if (nameProducto.equals(producto.getNombre())) {
+                            findProducto = true;
+
+                            System.out.println("Cantidad del producto: ");
+                            int cantidadProducto = scanner.nextInt();
+
+                            Compra nuevacompra = new Compra(nombreCliente, nameProducto, cantidadProducto);
+                            compras.add(nuevacompra);
+                            CompraData.guardarCompra(nuevacompra);
+
+                            System.out.println("Se ha añadido la compra!");
+                            System.out.println(
+                                    nombreCliente + " | " + nameProducto + " | " + cantidadProducto + " | " + "\n");
+                        }
+                    }
+                    if (!findProducto) {
+                        System.out.println("\n" + "No existe este producto!" + "\n");
+                    }
+
+                    break;
+
+                case 9:
                     System.out.println("Eliminar un producto:");
                     System.out.print("Nombre del producto a eliminar: ");
                     String nombreEliminar = scanner.nextLine();
@@ -160,7 +190,7 @@ public class Main {
                     }
                     System.out.println("-----------------------------------------");
                     break;
-                case 9:
+                case 10:
                     System.out.println("Actualizar el precio de un producto:");
                     System.out.print("Nombre del producto a actualizar: ");
                     String nombreActualizar = scanner.nextLine();
@@ -197,7 +227,8 @@ public class Main {
                     }
                     System.out.println("-----------------------------------------");
                     break;
-                case 10:
+
+                case 11:
                     System.out.println("Saliendo...");
                     scanner.close();
                     return;
