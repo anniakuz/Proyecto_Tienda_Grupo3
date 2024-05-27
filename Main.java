@@ -122,37 +122,53 @@ public class Main {
                     }
                     break;
                 case 7:
+                    System.out.println("Ganancias totales por cada producto:");
+                    Map<String, Double> gananciasPorProducto = new HashMap<>();
 
-                    break;
-
-                case 8:
-                System.out.println("Agregar un nuevo producto:");
-                System.out.print("Nombre del producto: ");
-                String nuevoNombre = scanner.nextLine();
-                boolean existeProducto = productos.stream().anyMatch(p -> p.getNombre().equalsIgnoreCase(nuevoNombre));
-                if (existeProducto) {
-                    System.out.println("El producto ya existe. No se puede agregar duplicado.");
-                    break;
-                }
-                double nuevoPrecio = 0;
-                boolean precioValido = false;
-                while (!precioValido) {
-                    System.out.print("Precio del producto: ");
-                    if (scanner.hasNextDouble()) {
-                        nuevoPrecio = scanner.nextDouble();
-                        scanner.nextLine();  // borrar fuffer
-                        precioValido = true;
-                    } else {
-                        System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
-                        scanner.next();  // borrar input invalido
+                    for (Compra compra : compras) {
+                        for (Producto producto : productos) {
+                            if (producto.getNombre().equals(compra.getNombreProducto())) {
+                                double ganancia = compra.getCantidad() * producto.getPrecio();
+                                gananciasPorProducto.put(producto.getNombre(), gananciasPorProducto.getOrDefault(producto.getNombre(), 0.0) + ganancia);
+                            }
+                        }
                     }
-                }
-                Producto nuevoProducto = new Producto(nuevoNombre, nuevoPrecio);
-                productos.add(nuevoProducto);
-                ProductoData.guardarProducto(nuevoProducto);
-                System.out.println("Producto agregado exitosamente.");
-                System.out.println("-----------------------------------------");
-                break;
+
+                    for (Map.Entry<String, Double> entry : gananciasPorProducto.entrySet()) {
+
+                        System.out.println("Producto: " + entry.getKey() + ": Las ganancias Totales son: " + entry.getValue());
+                    }
+                    System.out.println("-----------------------------------------");
+                    break;
+                case 8:
+                    System.out.println("Agregar un nuevo producto:");
+                    System.out.print("Nombre del producto: ");
+                    String nuevoNombre = scanner.nextLine();
+                    boolean existeProducto = productos.stream().anyMatch(p -> p.getNombre().equalsIgnoreCase(nuevoNombre));
+                    if (existeProducto) {
+                        System.out.println("El producto ya existe. No se puede agregar duplicado.");
+                        break;
+                    }
+                    double nuevoPrecio = 0;
+                    boolean precioValido = false;
+                    while (!precioValido) {
+                        System.out.print("Precio del producto: ");
+                        if (scanner.hasNextDouble()) {
+                            nuevoPrecio = scanner.nextDouble();
+                            scanner.nextLine();  // borrar fuffer
+                            precioValido = true;
+                        } else {
+                            System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
+                            scanner.next();  // borrar input invalido
+                        }
+                    }
+                    Producto nuevoProducto = new Producto(nuevoNombre, nuevoPrecio);
+                    productos.add(nuevoProducto);
+                    ProductoData.guardarProducto(nuevoProducto);
+                    System.out.println("Producto agregado exitosamente.");
+
+                    System.out.println("-----------------------------------------");
+                    break;
                 case 9:
                     System.out.println("Nombre del cliente: ");
                     String nombreCliente = scanner.nextLine();
