@@ -126,31 +126,33 @@ public class Main {
                     break;
 
                 case 8:
-                    System.out.println("Agregar un nuevo producto:");
-                    System.out.print("Nombre del producto: ");
-                    String nuevoNombre = scanner.nextLine();
-
-                    double nuevoPrecio = 0;
-                    boolean precioValido = false;
-
-                    while (!precioValido) {
-                        System.out.print("Precio del producto: ");
-                        if (scanner.hasNextDouble()) {
-                            nuevoPrecio = scanner.nextDouble();
-                            scanner.nextLine(); // clear the buffer
-                            precioValido = true;
-                        } else {
-                            System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
-                            scanner.next(); // clear the invalid input
-                        }
-                    }
-
-                    Producto nuevoProducto = new Producto(nuevoNombre, nuevoPrecio);
-                    productos.add(nuevoProducto);
-                    ProductoData.guardarProducto(nuevoProducto);
-                    System.out.println("Producto agregado exitosamente.");
-                    System.out.println("-----------------------------------------");
+                System.out.println("Agregar un nuevo producto:");
+                System.out.print("Nombre del producto: ");
+                String nuevoNombre = scanner.nextLine();
+                boolean existeProducto = productos.stream().anyMatch(p -> p.getNombre().equalsIgnoreCase(nuevoNombre));
+                if (existeProducto) {
+                    System.out.println("El producto ya existe. No se puede agregar duplicado.");
                     break;
+                }
+                double nuevoPrecio = 0;
+                boolean precioValido = false;
+                while (!precioValido) {
+                    System.out.print("Precio del producto: ");
+                    if (scanner.hasNextDouble()) {
+                        nuevoPrecio = scanner.nextDouble();
+                        scanner.nextLine();  // borrar fuffer
+                        precioValido = true;
+                    } else {
+                        System.out.println("Entrada inválida. Por favor, ingresa un número válido para el precio.");
+                        scanner.next();  // borrar input invalido
+                    }
+                }
+                Producto nuevoProducto = new Producto(nuevoNombre, nuevoPrecio);
+                productos.add(nuevoProducto);
+                ProductoData.guardarProducto(nuevoProducto);
+                System.out.println("Producto agregado exitosamente.");
+                System.out.println("-----------------------------------------");
+                break;
                 case 9:
                     System.out.println("Nombre del cliente: ");
                     String nombreCliente = scanner.nextLine();
@@ -221,12 +223,12 @@ public class Main {
                             System.out.print("Nuevo precio del producto: ");
                             if (scanner.hasNextDouble()) {
                                 nuevoPrecioActualizar = scanner.nextDouble();
-                                scanner.nextLine(); // clear the buffer
+                                scanner.nextLine();
                                 precioActualizarValido = true;
                             } else {
                                 System.out.println(
                                         "Entrada inválida. Por favor, ingresa un número válido para el precio.");
-                                scanner.next(); // clear the invalid input
+                                scanner.next(); 
                             }
                         }
 
