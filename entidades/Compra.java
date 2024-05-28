@@ -1,3 +1,5 @@
+package entidades;
+
 public class Compra {
     private String nombreClinete;
     private String nombreProducto;
