@@ -17,9 +17,9 @@ public class Main {
         comanda.registrarComanda("7", new CalcularGananciasPorCadaProducto());
         comanda.registrarComanda("8", new AgregarProducto());
         comanda.registrarComanda("9", new AgregarCompra());
-        comanda.registrarComanda("10", new EliminarProducto());
-        comanda.registrarComanda("11", new ActualizarPrecioProducto());
-        comanda.registrarComanda("12", new ClientePorNumeroDeCompras());
+        comanda.registrarComanda("10", new ActualizarPrecioProducto());
+        comanda.registrarComanda("11", new ClientePorNumeroDeCompras());
+        comanda.registrarComanda("12", new ClientePorValorDeCompras());
         comanda.registrarComanda("0", new Salir());
 
 
@@ -35,10 +35,9 @@ public class Main {
             System.out.println("7. Ganancias totales de cada producto");
             System.out.println("8. Agregar un producto");
             System.out.println("9. Agregar una compra");
-            System.out.println("10. Eliminar un producto");
-            System.out.println("11. Actualizar el precio de un producto");
-            System.out.println("12. Cliente más activo por numero de compras");
-            System.out.println("13. Cliente más activo por valor de compras");
+            System.out.println("10. Actualizar el precio de un producto");
+            System.out.println("11. Cliente más activo por numero de compras");
+            System.out.println("12. Cliente más activo por valor de compras");
             System.out.println("0. Salir");
 
             opcion = scanner.next();
