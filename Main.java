@@ -17,7 +17,7 @@ public class Main {
         comanda.registrarComanda("7", new CalcularGananciasPorCadaProducto());
         comanda.registrarComanda("8", new AgregarProducto());
         comanda.registrarComanda("9", new AgregarCompra());
-
+        comanda.registrarComanda("10", new EliminarProducto());
         comanda.registrarComanda("11", new ActualizarPrecioProducto());
         comanda.registrarComanda("12", new ClientePorNumeroDeCompras());
         comanda.registrarComanda("0", new Salir());
