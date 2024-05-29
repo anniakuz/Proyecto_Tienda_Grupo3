@@ -2,6 +2,7 @@ import comandos.*;
 
 import java.util.Scanner;
 
+
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
@@ -16,6 +17,8 @@ public class Main {
         comanda.registrarComanda("7", new CalcularGananciasPorCadaProducto());
         comanda.registrarComanda("8", new AgregarProducto());
         comanda.registrarComanda("9", new AgregarCompra());
+
+        comanda.registrarComanda("0", new Salir());
 
 
         String opcion = null;
@@ -34,7 +37,7 @@ public class Main {
             System.out.println("11. Actualizar el precio de un producto");
             System.out.println("12. Cliente más activo por numero de compras");
             System.out.println("13. Cliente más activo por valor de compras");
-            System.out.println("14. Salir");
+            System.out.println("0. Salir");
 
             opcion = scanner.next();
             scanner.nextLine();
