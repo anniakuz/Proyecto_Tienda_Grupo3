@@ -18,6 +18,7 @@ public class Main {
         comanda.registrarComanda("8", new AgregarProducto());
         comanda.registrarComanda("9", new AgregarCompra());
 
+        comanda.registrarComanda("12", new ClientePorNumeroDeCompras());
         comanda.registrarComanda("0", new Salir());
 
 
