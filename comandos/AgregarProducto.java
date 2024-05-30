@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AgregarProducto implements Comando{
-    Scanner scanner;
+    Scanner scanner = new SCanner(System.in);
     List<Producto> productos = ProductoData.leerTodosProductos();
 
     @Override
@@ -34,6 +34,6 @@ public class AgregarProducto implements Comando{
         Producto nuevoProducto = new Producto(nuevoNombre, nuevoPrecio);
         productos.add(nuevoProducto);
         ProductoData.guardarProducto(nuevoProducto);
-        System.out.println("entidades.Producto agregado exitosamente.");
+        System.out.println("Producto agregado exitosamente.");
     }
 }

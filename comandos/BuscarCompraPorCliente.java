@@ -23,7 +23,7 @@ public class BuscarCompraPorCliente implements Comando{
             }
         }
         if (!compraPorNombre.isEmpty()) {
-            System.out.println("Cliente " + compraPorNombre.get(0).getNombreClinete() + " tiene estas compras:");
+            System.out.println("\n" + "Cliente " + compraPorNombre.get(0).getNombreClinete() + " tiene estas compras:");
             compraPorNombre.stream().forEach(compra -> System.out
                     .println(compra.getNombreProducto() + "   " + compra.getCantidad()));
             System.out.println("-----------------------------------------");

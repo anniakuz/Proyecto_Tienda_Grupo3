@@ -17,10 +17,9 @@ public class Main {
         comanda.registrarComanda("8", new AgregarProducto());
         comanda.registrarComanda("9", new AgregarCompra());
 
-
         String opcion = null;
         do {
-            System.out.println("Selecciona una opción:");
+            System.out.println("\n" + "Selecciona una opción:");
             System.out.println("1. Ver todo el contenido de compras.csv");
             System.out.println("2. Buscar por el nombre en compras.csv");
             System.out.println("3. Ver todo el contenido de productos.csv");
