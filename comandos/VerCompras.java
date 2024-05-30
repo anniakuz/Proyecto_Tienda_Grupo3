@@ -14,7 +14,7 @@ public class VerCompras implements Comando {
 
     @Override
     public void ejecutar() {
-        System.out.println("Lista de comandas.csv:");
+        System.out.println("Lista de comandas.csv:" + "\n");
         compras.stream().forEach(producto -> System.out.println(producto.toString()));
     }
 }

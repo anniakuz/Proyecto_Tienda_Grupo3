@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class BuscarProducto implements Comando{
 
-    Scanner scanner;
+    Scanner scanner = new Scanner(System.in);
     List<Producto> productos = ProductoData.leerTodosProductos();
 
     @Override

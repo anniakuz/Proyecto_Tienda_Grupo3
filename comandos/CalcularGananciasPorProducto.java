@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CalcularGananciasPorProducto implements Comando {
-    Scanner scanner;
+    Scanner scanner = new Scanner(System.in);
     List<Compra> compras = CompraData.leerTodasCompras();
     List<Producto> productos = ProductoData.leerTodosProductos();
 

@@ -20,12 +20,13 @@ public class Main {
         comanda.registrarComanda("10", new ActualizarPrecioProducto());
         comanda.registrarComanda("11", new ClientePorNumeroDeCompras());
         comanda.registrarComanda("12", new ClientePorValorDeCompras());
+        comanda.registrarComanda("12", new ClientePorNumeroDeCompras());
         comanda.registrarComanda("0", new Salir());
 
 
         String opcion = null;
         do {
-            System.out.println("Selecciona una opción:");
+            System.out.println("\n" + "Selecciona una opción:");
             System.out.println("1. Ver todo el contenido de compras.csv");
             System.out.println("2. Buscar por el nombre en compras.csv");
             System.out.println("3. Ver todo el contenido de productos.csv");
