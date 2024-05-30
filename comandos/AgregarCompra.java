@@ -12,11 +12,12 @@ import java.util.Scanner;
 
 public class AgregarCompra implements Comando{
     Scanner scanner = new Scanner(System.in);
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
     List<Compra> compras = CompraData.leerTodasCompras();
 
     @Override
     public void ejecutar() {
+        reloadProductos();
         System.out.println("Nombre del cliente: ");
         String nombreCliente = scanner.nextLine();
         System.out.println("Nombre producto: ");
@@ -42,5 +43,8 @@ public class AgregarCompra implements Comando{
         if (!findProducto) {
             System.out.println("\n" + "No existe este producto!" + "\n");
         }
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 }

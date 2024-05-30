@@ -11,10 +11,11 @@ import java.util.List;
 
 public class CalcularGananciasTotales implements Comando{
     List<Compra> compras = CompraData.leerTodasCompras();
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
 
     @Override
     public void ejecutar() {
+        reloadProductos();
         double totalidad = 0.0;
         for (Compra compra : compras) {
             for (Producto producto : productos) {
@@ -24,5 +25,8 @@ public class CalcularGananciasTotales implements Comando{
             }
         }
         System.out.println("Las ganancias totales son :" + totalidad);
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 }

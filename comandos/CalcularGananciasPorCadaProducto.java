@@ -12,10 +12,11 @@ import java.util.Map;
 
 public class CalcularGananciasPorCadaProducto implements Comando{
     List<Compra> compras = CompraData.leerTodasCompras();
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
 
     @Override
     public void ejecutar() {
+        reloadProductos();
         System.out.println("Ganancias totales por cada producto:");
         Map<String, Double> gananciasPorProducto = new HashMap<>();
 
@@ -32,5 +33,8 @@ public class CalcularGananciasPorCadaProducto implements Comando{
 
             System.out.println("entidades.Producto: " + entry.getKey() + ": Ganancia Total: " + entry.getValue());
         }
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 }
