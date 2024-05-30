@@ -18,14 +18,25 @@ Comandos para el usuario:
 -2. Buscar por el nombre en compras.csv
 
 -3. Ver todo el contenido de productos.csv
+
 -4. Buscar por el nombre en productos.csv
+
 -5. Ganancias totales -> calcula la totalidad de las ganancias de la tienda
+
 -6. Ganancias totales de un producto -> Busca el producto por nombre y devuelve el valor total de todas las ventas de este producto
+
 -7. Ganancias totales de cada producto
+
 -8. Agregar un producto
+
 -9. Agregar una compra
+
 -10. Actualizar el precio de un producto
+
 -11. Cliente más activo por numero de compras -> Calcula el número de compras de cada cliente y devuelve su nombre. En caso de haber más de un cliente con el mismo número de compras, devuelve la lista de estos cliente.
+
 -12. Cliente más activo por valor de compras -> Calcula el total de las compras de cada cliente y devuelve el cliente con el valor más grande. Comprueba si hay otros clientes
 con el mismo valor de las compras y en caso afirmativo, devuelve la lista de estos clientes.
+
 -0. Salir
+
