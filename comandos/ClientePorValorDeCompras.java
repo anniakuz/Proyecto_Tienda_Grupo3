@@ -9,9 +9,10 @@ import java.util.*;
 
 public class ClientePorValorDeCompras implements Comando{
     List<Compra> compras = CompraData.leerTodasCompras();
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
     @Override
     public void ejecutar() {
+        reloadProductos();
         Map<String, Double> gananciasPorCliente = new HashMap<>();
 
         for(int i = 0; i < compras.size();i++){
@@ -42,5 +43,8 @@ public class ClientePorValorDeCompras implements Comando{
             }
         }
 
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 }

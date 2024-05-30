@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class AgregarProducto implements Comando{
     Scanner scanner = new Scanner(System.in);
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
 
     @Override
     public void ejecutar() {
@@ -48,4 +48,8 @@ public class AgregarProducto implements Comando{
 
     }
 
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
+    }
+}
 

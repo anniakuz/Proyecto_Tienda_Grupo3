@@ -9,11 +9,13 @@ import java.util.Scanner;
 public class ActualizarPrecioProducto implements Comando{
 
     Scanner scanner = new Scanner(System.in);
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
 
     @Override
     public void ejecutar() {
-        //System.out.println("Actualizar el precio de un producto:");
+
+        reloadProductos();
+     
         System.out.print("Nombre del producto a actualizar: ");
         String nombreActualizar = scanner.nextLine();
         boolean exist = false;
@@ -72,5 +74,8 @@ public class ActualizarPrecioProducto implements Comando{
         } else {
             System.out.println("No hay producto con este nombre");
         }*/
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 }

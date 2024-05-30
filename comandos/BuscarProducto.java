@@ -10,10 +10,11 @@ import java.util.Scanner;
 public class BuscarProducto implements Comando{
 
     Scanner scanner = new Scanner(System.in);
-    List<Producto> productos = ProductoData.leerTodosProductos();
+    List<Producto> productos;
 
     @Override
     public void ejecutar() {
+        reloadProductos();
         System.out.print("Ingresa el nombre del producto a buscar: ");
         String nombreProducto = scanner.nextLine();
         boolean encontrado = false;
@@ -26,6 +27,9 @@ public class BuscarProducto implements Comando{
         if (!encontrado) {
             System.out.println("No hay producto con este nombre");
         }
+    }
+    public void reloadProductos(){
+        productos = ProductoData.leerTodosProductos();
     }
 
 }
