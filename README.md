@@ -42,23 +42,23 @@ con el mismo valor de las compras y en caso afirmativo, devuelve la lista de est
 
 
 Organización de el proyecto, manera individual y grupal:
-  Nos divivimos el proyecto de manera invididual conforme iban surgiendo nuevas funcionalidades, la manera de repartir el tranajo en este caso fue de la siguiente manera.
+  Nos divivimos el proyecto de manera invididual conforme iban surgiendo nuevas funcionalidades, la manera de repartir el trabajo en este caso fue de la siguiente manera.
 
-  Organizacion del equipo de manera grupal:
+  Organización del equipo de manera grupal:
   
-    -Como  Lider y editora de codigo se encargo Annia debido a su gran conocimiento con el lenguaje utilizado. 
+    -Como  Lider y editora de código se encargó Annia debido a mayor experiencia.
     
-    -Como supervidor general Ney, se encargo de organizar un poco mas el equipo en terminos de trabajo en equipo y organizacion. 
+    -Como supervidor general Ney, se encargó de organizar un poco más el equipo en terminos de trabajo en equipo y organización. 
     
-    -Manejo de Git Angel, sin duda el que mejor sabia del tema al respecto.
+    -Manejo de Git Angel, sin duda el que mejor sabía del tema al respecto.
     
-    -Acesor creativo Jia, propuso varias de las ideas que se terminaron por implementar en el proyecto.
+    -Asesor creativo Jia, propuso varias de las ideas que se terminaron por implementar en el proyecto.
 		
-  Organizacion individual
+  Organización individual
   
-    +Cabe recalcar que en todos los puntos Annia estuvo presente en mayor o menos medida, guiandonos y reorganizando el codigo para que este mas limpio.
+    +Cabe recalcar que en todos los puntos Annia estuvo presente en mayor o menor medida, guiándonos y reorganizando el código para que este más limpio.
     
-    -Puntos 1, 2, 3, y la conecxion de lectura con los archivos CSV fueron realizados por Jia.
+    -Puntos 1, 2, 3, y la conexión de lectura con los archivos CSV fueron realizados por Jia.
     
     -Puntos 1, 9 fueron realizados por Angel.
     
@@ -66,5 +66,5 @@ Organización de el proyecto, manera individual y grupal:
     
     -Puntos 11, 12 fueron realizados por Annia.
     
-    -Los puntos restantes fueron unificacion de codigos hechos por el resto de ejercicios, esos fueron implementados rapidamente por Annia.
+    -Los puntos restantes fueron unificación de códigos hechos por el resto de ejercicios, ésos fueron implementados por Annia.
 
