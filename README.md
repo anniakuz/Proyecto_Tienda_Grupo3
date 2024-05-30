@@ -45,10 +45,11 @@ Organización de el proyecto, manera individual y grupal:
   Nos divivimos el proyecto de manera invididual conforme iban surgiendo nuevas funcionalidades, la manera de repartir el tranajo en este caso fue de la siguiente manera.
 
   Organizacion del equipo de manera grupal:
-    -Como  Lider y editora de codigo se encargo Annia debido a su gran conocimiento con el lenguaje utilizado.
-    -Como supervidor general Ney, se encargo de organizar un poco mas el equipo en terminos de trabajo en equipo y organizacion.
+    -Como  Lider y editora de codigo se encargo Annia debido a su gran conocimiento con el lenguaje utilizado. 
+    -Como supervidor general Ney, se encargo de organizar un poco mas el equipo en terminos de trabajo en equipo y organizacion. 
     -Manejo de Git Angel, sin duda el que mejor sabia del tema al respecto.
     -Acesor creativo Jia, propuso varias de las ideas que se terminaron por implementar en el proyecto.
+		
   Organizacion individual
     +Cabe recalcar que en todos los puntos Annia estuvo presente en mayor o menos medida, guiandonos y reorganizando el codigo para que este mas limpio.
     -Puntos 1, 2, 3, y la conecxion de lectura con los archivos CSV fueron realizados por Jia.
