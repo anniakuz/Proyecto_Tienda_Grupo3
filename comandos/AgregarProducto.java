@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AgregarProducto implements Comando{
-    Scanner scanner = new SCanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     List<Producto> productos = ProductoData.leerTodosProductos();
 
     @Override
