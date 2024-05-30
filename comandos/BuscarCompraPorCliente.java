@@ -9,10 +9,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BuscarCompraPorCliente implements Comando{
-    List<Compra> compras = CompraData.leerTodasCompras();
+    List<Compra> compras;
      Scanner scanner = new Scanner(System.in);
 
     public void ejecutar(){
+        reloadCompras();
         System.out.print("Ingresa el nombre a buscar en compras.csv: ");
         String nombreCl = scanner.nextLine();
 
@@ -30,6 +31,9 @@ public class BuscarCompraPorCliente implements Comando{
         } else {
             System.out.println("No hay cliente con este nombre");
         }
+    }
+    public void reloadCompras(){
+        compras = CompraData.leerTodasCompras();
     }
 
 }

@@ -45,8 +45,7 @@ public class AgregarProducto implements Comando{
             System.out.println("Producto agregado exitosamente.");
         }
     }
-
-    }
+    
 
     public void reloadProductos(){
         productos = ProductoData.leerTodosProductos();

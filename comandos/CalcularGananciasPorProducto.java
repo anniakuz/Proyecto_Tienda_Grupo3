@@ -12,12 +12,13 @@ import java.util.Scanner;
 
 public class CalcularGananciasPorProducto implements Comando {
     Scanner scanner = new Scanner(System.in);
-    List<Compra> compras = CompraData.leerTodasCompras();
+    List<Compra> compras;
     List<Producto> productos;
 
     @Override
     public void ejecutar() {
         reloadProductos();
+        reloadCompras();
         System.out.println("Introduce el nombre del producto:");
         String nombrePr = scanner.nextLine();
 
@@ -38,5 +39,8 @@ public class CalcularGananciasPorProducto implements Comando {
 
     public void reloadProductos(){
         productos = ProductoData.leerTodosProductos();
+    }
+    public void reloadCompras(){
+        compras = CompraData.leerTodasCompras();
     }
 }
