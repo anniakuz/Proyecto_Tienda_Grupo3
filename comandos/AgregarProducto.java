@@ -13,6 +13,7 @@ public class AgregarProducto implements Comando{
 
     @Override
     public void ejecutar() {
+        reloadProductos();
         System.out.print("Nombre del producto: ");
         String nuevoNombre = scanner.nextLine();
         boolean exists = false;
@@ -45,7 +46,7 @@ public class AgregarProducto implements Comando{
             System.out.println("Producto agregado exitosamente.");
         }
     }
-    
+
 
     public void reloadProductos(){
         productos = ProductoData.leerTodosProductos();
