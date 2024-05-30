@@ -6,11 +6,8 @@ import lectorArchivos.CompraData;
 import lectorArchivos.ProductoData;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.counting;
-
-public class ClientePorNumeroDeCompras implements Comando{
+public class ClientePorValorDeCompras implements Comando{
     List<Compra> compras = CompraData.leerTodasCompras();
     List<Producto> productos = ProductoData.leerTodosProductos();
     @Override
