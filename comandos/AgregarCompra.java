@@ -13,11 +13,12 @@ import java.util.Scanner;
 public class AgregarCompra implements Comando{
     Scanner scanner = new Scanner(System.in);
     List<Producto> productos;
-    List<Compra> compras = CompraData.leerTodasCompras();
+    List<Compra> compras;
 
     @Override
     public void ejecutar() {
         reloadProductos();
+        reloadCompras();
         System.out.println("Nombre del cliente: ");
         String nombreCliente = scanner.nextLine();
         System.out.println("Nombre producto: ");
@@ -46,5 +47,8 @@ public class AgregarCompra implements Comando{
     }
     public void reloadProductos(){
         productos = ProductoData.leerTodosProductos();
+    }
+    public void reloadCompras(){
+        compras = CompraData.leerTodasCompras();
     }
 }
