@@ -12,8 +12,11 @@ Como lo hemos hecho
 
   
 Comandos para el usuario:
+
 -1. Ver todo el contenido de compras.csv
+
 -2. Buscar por el nombre en compras.csv
+
 -3. Ver todo el contenido de productos.csv
 -4. Buscar por el nombre en productos.csv
 -5. Ganancias totales -> calcula la totalidad de las ganancias de la tienda
