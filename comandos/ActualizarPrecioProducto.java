@@ -19,7 +19,10 @@ public class ActualizarPrecioProducto implements Comando{
         System.out.print("Nombre del producto a actualizar: ");
         String nombreActualizar = scanner.nextLine();
         boolean exist = false;
-
+        
+        // Este bloque de código busca un producto por nombre en una lista, valida la entrada del usuario para actualizar 
+        //el precio del producto y actualiza el precio si la entrada es válida.
+        
         Producto productoAActualizar = null;
         for (Producto producto : productos) {
             if (producto.getNombre().equalsIgnoreCase(nombreActualizar)) {
