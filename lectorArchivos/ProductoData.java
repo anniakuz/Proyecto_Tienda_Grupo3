@@ -20,30 +20,29 @@ public class ProductoData {
      * @return la lista de los productos con su info
      */
     public static List<Producto> leerTodosProductos() {
+        String linea;  // Variable para almacenar cada línea leída del archivo
+        String[] lines;  // Arreglo para almacenar los valores de cada línea divididos por coma
 
-        String linea;
-        String[] lines;
-
-        List<Producto> productos = new ArrayList<>();
+        List<Producto> productos = new ArrayList<>();  // Lista para almacenar los productos leídos
         try {
-            BufferedReader lector = new BufferedReader(new FileReader(FILE_PATH));
-            lector.readLine();
+            BufferedReader lector = new BufferedReader(new FileReader(FILE_PATH));  // Crear un BufferedReader para leer el archivo
+            lector.readLine();  // Leer y descartar la primera línea (cabecera)
             while ((linea = lector.readLine()) != null) {
-                lines = linea.split(",");
+                lines = linea.split(",");  // Dividir la línea en valores separados por coma
                 String nombre = lines[0];
                 Double price = Double.parseDouble(lines[1]);
 
-                Producto producto = new Producto(nombre, price);
-                productos.add(producto);
+                Producto producto = new Producto(nombre, price);  // Crear un objeto Producto con los valores leídos
+                productos.add(producto);  // Agregar el producto a la lista
                 // System.out.println(producto.getNombre()+ "------"+ producto.getPrecio());
             }
-            lector.close();
+            lector.close();  // Cerrar el lector
 
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            JOptionPane.showConfirmDialog(null, e);  // Mostrar un mensaje de error si ocurre una excepción
         }
 
-        return productos;
+        return productos;  // Devolver la lista de productos
     }
 
     /**
@@ -53,31 +52,11 @@ public class ProductoData {
      */
     public static void guardarProducto(Producto producto) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
+            // Escribir el producto en el archivo en formato CSV
             writer.write(producto.getNombre() + "," + String.format(Locale.US, "%.2f", producto.getPrecio()));
-            writer.newLine();
+            writer.newLine();  // Escribir una nueva línea
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al guardar el producto: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Eliminar un producto del archivo CSV
-     *
-     * @param producto
-     */
-    public static void eliminarProducto(Producto producto) {
-        List<Producto> productos = leerTodosProductos();
-        productos.removeIf(p -> p.getNombre().equalsIgnoreCase(producto.getNombre()));
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
-            writer.write("nombre,precio");
-            writer.newLine();
-            for (Producto p : productos) {
-                writer.write(p.getNombre() + "," + String.format(Locale.US, "%.2f", p.getPrecio()));
-                writer.newLine();
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al eliminar el producto: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al guardar el producto: " + e.getMessage());  // Mostrar un mensaje de error si ocurre una excepción
         }
     }
 
@@ -87,8 +66,9 @@ public class ProductoData {
      * @param producto
      */
     public static void actualizarProducto(Producto producto) {
-        List<Producto> productos = leerTodosProductos();
+        List<Producto> productos = leerTodosProductos();  // Leer todos los productos del archivo
 
+        // Buscar y actualizar el producto en la lista
         for (Producto p : productos) {
             if (p.getNombre().equalsIgnoreCase(producto.getNombre())) {
                 p.setPrecio(producto.getPrecio());
@@ -97,14 +77,15 @@ public class ProductoData {
         }
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
-            writer.write("nombre,precio");
+            // Reescribir el archivo completo con la lista actualizada de productos
+            writer.write("nombre,precio");  // Escribir la cabecera
             writer.newLine();
             for (Producto p : productos) {
                 writer.write(p.getNombre() + "," + String.format(Locale.US, "%.2f", p.getPrecio()));
                 writer.newLine();
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el producto: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al actualizar el producto: " + e.getMessage());  // Mostrar un mensaje de error si ocurre una excepción
         }
     }
 }
